@@ -2,11 +2,54 @@
 =========================
 
 # 1. 견적 계산식 수정법
-## 1.1. 마크다운이란?
-[**Markdown**](http://whatismarkdown.com/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다. 특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.
-마크다운이 최근 각광받기 시작한 이유는 깃헙([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다. 마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.
 
-## 1.2. 마크다운의 장-단점
+## 1.1. 경로이동
+js 파일 안에 main.js클릭
+
+## 1.2. main.js 함수 수정
+main.js 파일 내용중 아래와 같은 함수를 찾아 수정해주세요.
+※ 함수에 들어간 * / + - 는 기본 계산기에 사용되는 사칙연산 문자입니다. ※
+
+함수 내부에 변수는 1.2.1를 참조해주세요.
+
+```
+// 추가 옵션 클릭 시 설정 함수
+    const setOption = () => {
+        document.querySelector('.option-text').innerHTML = el.target.innerText;
+
+        if (el.target.getAttribute('data-img') !== "1") {
+            optionPrice = 110000;
+            document.querySelector('.option-price').classList.add('active')
+        } else {
+            optionPrice = 0;
+            document.querySelector('.option-price').classList.remove('active');
+        }
+    }
+```
+
+```
+const priceSum = () => {
+    unitPrice = ((widthSize * heightSize) / 10000) * 210000;
+    optionPlusPrice = unitPrice + optionPrice;
+    VAT = optionPlusPrice * 0.1;
+    resultPrice = Math.round(VAT + optionPlusPrice);
+    resultPrice < 462000 ? resultPrice = 462000 : false;
+    let priceString = "￦" + resultPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    let calculatorPriceString = "￦" + (resultPrice - 5005000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    document.querySelectorAll('.calculator-price').forEach(item => item.innerHTML = calculatorPriceString)
+    document.querySelectorAll('.price-result').forEach(item => item.innerHTML = priceString)
+}
+```
+
+### 1.2.1 해당 변수 설명
+widthSize는 사용자가 입력한 가로 길이입니다.
+heightSize는 사용자가 입력한 세로 길이입니다.
+unitPrice계산식 중 (widthSize * heightSize) / 10000의 계산은 M2를 나타내며 단가는 210,000원 입니다.
+optionPlusPrice중 optionPrice는 옵션 선택 시 110,00원 값이 주어지고 아니면 0을 나타내는 변수입니다.
+VAT는 세금 계산입니다
+resultPrice 중 Math.round(VAT + optionPlusPrice)는 세금과 
+
 ### 1.2.1. 장점
 	1. 간결하다.
 	2. 별도의 도구없이 작성가능하다.
