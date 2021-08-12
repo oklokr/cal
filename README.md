@@ -98,20 +98,60 @@ unitPrice = ((widthSize * heightSize) / 10000) * 단가가격;
 * 위와 같은 변수선언을 찾아 옵션가격을 기입해주시면 됩니다. 
 ****
 # 2. 이미지 교체 방법
-## 2.1. WordPress 사이트 이동
-* https://www.derschutzshop.com/wp-admin 사이트로 이동합니다.
+## 2.1. WordPress 사이트 이동과 이미지 삽입
+https://www.derschutzshop.com/wp-admin 사이트로 이동합니다.    \
+ID와 PassWord입력 후 미디어 > 새로추가 클릭 후 교체하고자 하는 이미지를 삽입합니다.    \
+이미지 교체 시 삽입 주의는 2.1.2 파일 이름은 2.1.1 참조하여 준수해주시길 바랍니다.    \
+
+### 2.1.1. 이미지 네이밍 주의점
+이미지 네이밍은 규칙이 있으므로 다음과같이 설명합니다.
+* 프레임: Warm White(1), Matte Gray(2)
+* 필름: Charcoal Gray(1)
+* 투과율: 2%(1), 7%(2)
+* 추가옵션: 싱글(1), Dark Gray듀오(2), Beige듀오(3), White듀오(4)
+
+예) 프레임 Matte Gray, 필름 Charcoal Gray, 투과율 7%, 추가옵션 beige듀오 선택 시 파일 이름은 1123이 됩니다.
+
+### 2.1.2. 이미지 삽입 시 주의점
+이미지 삽입 시 해당 페이지의 모든 블라인드 사진을 교체해주길 바랍니다.
+
+## 2.2. 경로이동 및 함수 수정
+js 파일 내부에 main.js파일 클릭해주세요.
 ```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
+const imgSetUrl = "https://www.derschutzshop.com/wp/wp-content/uploads/2021/02/";
+
+const imgSetUrl = "https://www.derschutzshop.com/wp/wp-content/uploads/수정 년도/수정 월/";
 ```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
-####### This is a H7(지원하지 않음)
+해당 변수선언을 찾아 수정년도와 월을 입력해주시길 바랍니다.
+
+# 3. 수정 적용방법
+## 3.1. WordPress 접속
+https://www.derschutzshop.com/wp-admin 사이트로 이동합니다.
+## 3.2. 페이지 수정
+좌측 메뉴중 페이지에 모든 페이지를 클릭합니다.    \
+데어슈츠블라인드 견적에 마우스 커서를 올리고 편집을 클릭합니다.
+## 3.3. 코드 넣기
+3.3.1. 참조하여 파일을 열어주세요.    \
+3.3.2. 참조하여 해당 양식안에 양식에 알맞게 넣은 후 복사하여 코드를 넣어줍니다.    \
+
+### 3.3.1. 경로이동
+1. css 파일안에 reset.css
+2. css 파일안에 main.css
+3. js 파일안에 main.js
+4. index.html
+### 3.3.2. 양식
+```
+<style>
+(reset.css)
+(main.css)
+</style>
+
+<div class="wrap">
+    (index.html)
+    
+    <script type="text/javascript">Kakao.init('582340ec20c1ba4e20c3d6c9c56ec807');</script>
+    <script>
+        (main.js)
+    </script>
+</div>
+```
