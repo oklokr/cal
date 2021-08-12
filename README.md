@@ -42,12 +42,12 @@ const priceSum = () => {
 ```
 
 ### 1.2.1 해당 변수 설명
-widthSize는 사용자가 입력한 가로 길이입니다.
-heightSize는 사용자가 입력한 세로 길이입니다.
-unitPrice계산식 중 (widthSize * heightSize) / 10000의 계산은 M2를 나타내며 단가는 210,000원 입니다.
-optionPlusPrice중 optionPrice는 옵션 선택 시 110,00원 값이 주어지고 아니면 0을 나타내는 변수입니다.
-VAT는 세금 계산입니다
-resultPrice 중 Math.round(VAT + optionPlusPrice)는 세금과 
+widthSize는 사용자가 입력한 가로 길이입니다.    \
+heightSize는 사용자가 입력한 세로 길이입니다.    \
+unitPrice계산식 중 (widthSize * heightSize) / 10000의 계산은 M2를 나타내며 단가는 210,000원 입니다.    \
+optionPlusPrice중 optionPrice는 옵션 선택 시 110,00원 값이 주어지고 아니면 0을 나타내는 변수입니다.    \
+VAT는 세금 계산입니다    \
+resultPrice 중 Math.round(VAT + optionPlusPrice)는 세금과     \
 
 ### 1.2.1. 장점
 	1. 간결하다.
